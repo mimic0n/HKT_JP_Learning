@@ -1,0 +1,17 @@
+{
+  "name": "japanese-srs-backend",
+  "version": "1.0.0",
+  "description": "Backend for Japanese Learning SRS App",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js",
+    "seed": "node scripts/import-jlpt-data.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

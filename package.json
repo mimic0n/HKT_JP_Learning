@@ -1,0 +1,10 @@
+{
+  "name": "hkt-jp-learning",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "npm --prefix frontend dev",
+    "seed": "npm --prefix backend run seed"
+  }
+}

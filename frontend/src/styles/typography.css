@@ -1,0 +1,84 @@
+/* ─── Local Font Imports ─── */
+@font-face {
+  font-family: 'Japan Daisuki';
+  src: url('/assets/font/japan-daisuki/Japan Daisuki.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oshigo';
+  src: url('/assets/font/Oshigo/oshigo/oshigo.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Makuton';
+  src: url('/assets/font/Makuton/Makuton.otf') format('opentype');
+  font-display: swap;
+}
+
+/* ─── Type Scale Classes ─── */
+.display-hero {
+  font-family: "Japan Daisuki", "Be Vietnam Pro", sans-serif;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .display-hero {
+    font-size: 40px;
+  }
+}
+
+.headline-lg {
+  font-family: "Japan Daisuki", "Be Vietnam Pro", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 52px;
+}
+
+@media (max-width: 768px) {
+  .headline-lg {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+.headline-md {
+  font-family: "Japan Daisuki", "Be Vietnam Pro", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.body-lg {
+  font-family: "Oshigo", "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.body-md {
+  font-family: "Oshigo", "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.label-caps {
+  font-family: "Makuton", "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.label-sm {
+  font-family: "Makuton", "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+}

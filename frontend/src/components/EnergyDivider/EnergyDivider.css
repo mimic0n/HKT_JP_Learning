@@ -1,0 +1,24 @@
+.energy-divider {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.energy-divider__line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 177, 198, 0.1);
+  overflow: hidden;
+}
+
+.energy-divider__glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--sakura-pink), transparent);
+  box-shadow: 0 0 10px var(--sakura-pink);
+}

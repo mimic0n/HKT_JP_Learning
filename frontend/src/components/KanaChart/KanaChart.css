@@ -1,0 +1,252 @@
+.kana-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.kana-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .kana-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.kana-header__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kana-tabs {
+  display: flex;
+  background: rgba(235, 230, 242, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: var(--rounded-full);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: inset 3px 3px 6px rgba(13, 13, 26, 0.1), inset -3px -3px 6px rgba(255, 255, 255, 0.85);
+}
+
+.kana-tab {
+  padding: 10px 24px;
+  border-radius: var(--rounded-full);
+  font-family: "Makuton", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--on-surface-variant);
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.kana-tab:hover:not(.kana-tab--active) {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.06), -2px -2px 6px rgba(255, 255, 255, 0.8);
+  color: #ff4992;
+}
+
+.kana-tab--active {
+  background: var(--neo-primary-gradient);
+  color: #650031;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 10px rgba(186, 0, 95, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.9);
+}
+
+.kana-tab:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+.kana-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filter-pill {
+  padding: 8px 18px;
+  border-radius: var(--rounded-full);
+  font-family: "Makuton", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  background: linear-gradient(145deg, #ffffff, #ede8f5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #0d0d1a;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 3px 3px 8px rgba(13, 13, 26, 0.08), -3px -3px 8px #ffffff;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.filter-pill:hover {
+  background: linear-gradient(145deg, #ffffff, #f5f0fb);
+  color: #ff4992;
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 12px rgba(13, 13, 26, 0.12), -5px -5px 12px #ffffff;
+}
+
+.filter-pill--active {
+  background: linear-gradient(145deg, #62e2ff, #24c6ee);
+  color: #003642;
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 4px 4px 12px rgba(0, 158, 190, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.9);
+}
+
+.filter-pill:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: inset 2px 2px 5px rgba(13, 13, 26, 0.14), inset -2px -2px 5px rgba(255, 255, 255, 0.9);
+}
+
+/* Kana Grid Board */
+.kana-chart {
+  padding: 32px;
+}
+
+.kana-chart__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .kana-chart__grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+  }
+}
+
+.kana-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #ffffff, #eae3f1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: var(--rounded-md);
+  box-shadow: 4px 4px 10px rgba(13, 13, 26, 0.08), -4px -4px 10px #ffffff;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.kana-cell:hover:not(.kana-cell--empty) {
+  background: linear-gradient(145deg, #ffffff, #f7dced);
+  border-color: rgba(255, 73, 146, 0.4);
+  box-shadow: 6px 6px 14px rgba(255, 73, 146, 0.2), -6px -6px 14px #ffffff;
+  transform: translateY(-3px);
+}
+
+.kana-cell:active:not(.kana-cell--empty) {
+  transform: translateY(1px) scale(0.96);
+  box-shadow: inset 3px 3px 6px rgba(13, 13, 26, 0.12), inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.kana-cell--empty {
+  opacity: 0.15;
+  cursor: default;
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.kana-cell__char {
+  font-family: "Noto Sans JP", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d0d1a;
+}
+
+.kana-cell__romaji {
+  font-family: "Makuton", monospace;
+  font-size: 11px;
+  color: var(--mist-gray);
+  margin-top: 2px;
+}
+
+/* Modal Popup */
+.kana-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.kana-modal {
+  width: 100%;
+  max-width: 380px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  color: #0d0d1a;
+}
+
+.kana-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 18px;
+  color: var(--mist-gray);
+  background: linear-gradient(145deg, #ffffff, #ede8f5);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 8px rgba(13, 13, 26, 0.1), -3px -3px 8px #ffffff;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.kana-modal__close:hover {
+  color: #ff4992;
+  transform: translateY(-1px);
+  box-shadow: 4px 4px 10px rgba(13, 13, 26, 0.15), -4px -4px 10px #ffffff;
+}
+
+.kana-modal__close:active {
+  transform: translateY(1px) scale(0.95);
+  box-shadow: inset 2px 2px 4px rgba(13, 13, 26, 0.15), inset -2px -2px 4px rgba(255, 255, 255, 0.9);
+}
+
+.kana-modal__char {
+  font-family: "Noto Sans JP", serif;
+  font-size: 80px;
+  font-weight: 900;
+  color: #ba005f;
+  text-shadow: 0 0 25px rgba(186, 0, 95, 0.3);
+}
+
+.kana-modal__romaji {
+  font-family: "Makuton", monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #006f85;
+}
+
+.kana-modal__info {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}

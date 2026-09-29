@@ -1,0 +1,289 @@
+@import './variables.css';
+@import './reset.css';
+@import './typography.css';
+@import './animations.css';
+
+/* ─── Page-wide Background (Full fidelity Background_2) ─── */
+body {
+  background-color: #131318;
+  color: #ff4992;
+  font-family: 'Oshigo', 'Work Sans', 'Noto Sans JP', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Entire Web Background: Background_2 with no color edit */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/assets/Image/Background_2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+/* ─── Glassmorphism Panels (Screen 1 Washi Blossom) ─── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07), 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: var(--rounded-xl);
+}
+
+.glass-panel--light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 16px rgba(13, 13, 26, 0.06);
+}
+
+/* ─── Neomorphism UI Core & Button System ─── */
+button,
+.btn-neo {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: var(--neo-bg-gradient);
+  color: var(--on-surface);
+  box-shadow: var(--neo-shadow-outset);
+  border-radius: var(--rounded-lg);
+  font-family: "Makuton", "Work Sans", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  user-select: none;
+  position: relative;
+}
+
+button:hover,
+.btn-neo:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neo-shadow-outset-hover);
+  border-color: rgba(255, 255, 255, 0.95);
+}
+
+button:active,
+.btn-neo:active,
+button.is-active,
+.btn-neo.is-active {
+  transform: translateY(1px) scale(0.985);
+  box-shadow: var(--neo-shadow-inset) !important;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+button:focus-visible,
+.btn-neo:focus-visible {
+  box-shadow: var(--neo-shadow-outset), 0 0 0 3px rgba(255, 73, 146, 0.45);
+}
+
+/* Primary Sakura Neomorphism Button */
+.btn-neo-primary {
+  background: var(--neo-primary-gradient) !important;
+  color: #650031 !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: var(--neo-primary-shadow) !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-neo-primary:hover {
+  box-shadow: var(--neo-primary-shadow-hover) !important;
+  transform: translateY(-2px);
+  color: #59002a !important;
+}
+
+.btn-neo-primary:active {
+  box-shadow: var(--neo-primary-shadow-active) !important;
+  transform: translateY(1px) scale(0.985);
+}
+
+/* Secondary Washi Neomorphism Button */
+.btn-neo-secondary {
+  background: linear-gradient(145deg, #ffffff, #ede8f5) !important;
+  color: #0d0d1a !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 4px 4px 10px rgba(13, 13, 26, 0.1), -4px -4px 10px #ffffff !important;
+}
+
+.btn-neo-secondary:hover {
+  background: linear-gradient(145deg, #ffffff, #f5f0fb) !important;
+  box-shadow: 6px 6px 14px rgba(13, 13, 26, 0.15), -6px -6px 14px #ffffff !important;
+  color: #ff4992 !important;
+}
+
+.btn-neo-secondary:active {
+  box-shadow: inset 3px 3px 6px rgba(13, 13, 26, 0.15), inset -3px -3px 6px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Cyber Ice Accent Neomorphism Button */
+.btn-neo-accent {
+  background: linear-gradient(145deg, #62e2ff, #24c6ee) !important;
+  color: #003642 !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 5px 5px 14px rgba(0, 158, 190, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.85) !important;
+}
+
+.btn-neo-accent:hover {
+  box-shadow: 7px 7px 18px rgba(0, 158, 190, 0.4), -6px -6px 14px rgba(255, 255, 255, 0.95) !important;
+  transform: translateY(-2px);
+}
+
+.btn-neo-accent:active {
+  box-shadow: inset 3px 3px 6px rgba(0, 54, 66, 0.35), inset -3px -3px 6px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Danger/Red Neomorphism Button */
+.btn-neo-danger {
+  background: linear-gradient(145deg, #ff99a4, #e63946) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 5px 5px 14px rgba(147, 0, 10, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.85) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.btn-neo-danger:hover {
+  box-shadow: 7px 7px 18px rgba(147, 0, 10, 0.45), -6px -6px 14px rgba(255, 255, 255, 0.95) !important;
+  transform: translateY(-2px);
+}
+
+.btn-neo-danger:active {
+  box-shadow: inset 3px 3px 6px rgba(105, 0, 5, 0.45), inset -3px -3px 6px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Warning Neomorphism Button */
+.btn-neo-warning {
+  background: linear-gradient(145deg, #ffb8e8, #c42b8e) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 5px 5px 14px rgba(144, 1, 90, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.85) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-neo-warning:hover {
+  box-shadow: 7px 7px 18px rgba(144, 1, 90, 0.45), -6px -6px 14px rgba(255, 255, 255, 0.95) !important;
+  transform: translateY(-2px);
+}
+
+.btn-neo-warning:active {
+  box-shadow: inset 3px 3px 6px rgba(99, 0, 61, 0.45), inset -3px -3px 6px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ─── Neomorphism Utility Containers ─── */
+.neo-lift {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(243, 237, 244, 0.8));
+  box-shadow: 6px 6px 15px var(--neo-shadow-dark), -6px -6px 15px var(--neo-shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.neo-lift:hover {
+  box-shadow: 8px 8px 20px var(--neo-shadow-dark-strong), -8px -8px 20px var(--neo-shadow-light), 0 0 15px rgba(255, 177, 198, 0.3);
+  transform: translateY(-3px);
+}
+
+.neo-inset {
+  background: rgba(238, 234, 245, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 3px 3px 7px rgba(13, 13, 26, 0.12), inset -3px -3px 7px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.neo-inset:focus-within {
+  box-shadow: inset 3px 3px 7px rgba(13, 13, 26, 0.14), inset -3px -3px 7px rgba(255, 255, 255, 0.9), 0 0 0 3px rgba(255, 73, 146, 0.3);
+  border-color: rgba(255, 73, 146, 0.45);
+}
+
+/* ─── Skeuomorphic Washi Texture ─── */
+.washi-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ─── Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(to right, #ba005f, #ff4992);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text--sakura {
+  background: linear-gradient(135deg, #0d0d1a 0%, #ff4992 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── App Layout & Container Utilities ─── */
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: var(--margin-desktop);
+  padding-right: var(--margin-desktop);
+  padding-top: 100px;
+  padding-bottom: 60px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding-left: var(--margin-mobile);
+    padding-right: var(--margin-mobile);
+    padding-top: 85px;
+    padding-bottom: 40px;
+  }
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-xxl {
+  gap: var(--space-xxl);
+}
+
+.gap-xl {
+  gap: var(--space-xl);
+}
+
+.gap-lg {
+  gap: var(--space-lg);
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #131318;
+}
+::-webkit-scrollbar-thumb {
+  background: #35343a;
+  border-radius: var(--rounded-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffb6d9;
+}
+

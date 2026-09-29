@@ -1,0 +1,247 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+}
+
+.hero-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 56px 40px;
+  border-radius: var(--rounded-xl);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 20px 48px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 177, 198, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero-header h1 {
+  color: #0d0d1a;
+}
+
+.hero-description {
+  color: #35343a;
+  font-weight: 500;
+  max-width: 680px;
+  margin-top: 8px;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  padding: 12px 24px;
+  border-radius: var(--rounded-full);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0d0d1a;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 177, 198, 0.45);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+}
+
+.icon-pink {
+  color: #ba005f;
+}
+
+/* Roadmap Section */
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.roadmap__title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 177, 198, 0.15);
+  padding-bottom: 16px;
+}
+
+.roadmap__title-row h2 {
+  color: #e4e1e8;
+}
+
+.roadmap__icon {
+  font-size: 32px;
+  color: #ffb6d9;
+}
+
+.roadmap__subtitle {
+  color: rgba(228, 225, 232, 0.6);
+}
+
+.roadmap__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+  .roadmap__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .roadmap__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roadmap-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--rounded-xl);
+  border-top-width: 4px;
+  border-top-style: solid;
+  min-height: 280px;
+  color: #0d0d1a;
+}
+
+.roadmap-card--n5 {
+  border-top-color: #ff4992;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 245, 0.92) 100%);
+  border: 1px solid rgba(255, 177, 198, 0.45);
+}
+.roadmap-card--n4 {
+  border-top-color: #ff66a3;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 235, 240, 0.92) 100%);
+  border: 1px solid rgba(255, 153, 198, 0.45);
+}
+.roadmap-card--n3 {
+  border-top-color: #ba005f;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 230, 240, 0.92) 100%);
+  border: 1px solid rgba(186, 0, 95, 0.35);
+}
+.roadmap-card--n2 {
+  border-top-color: #894c5e;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 235, 240, 0.92) 100%);
+  border: 1px solid rgba(137, 76, 94, 0.35);
+}
+.roadmap-card--n1 {
+  border-top-color: #4a1a6b;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(235, 230, 245, 0.92) 100%);
+  border: 1px solid rgba(74, 26, 107, 0.3);
+}
+
+.roadmap-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.badge-phase {
+  font-family: "Makuton", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--rounded-full);
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.badge-phase--n5 { background: rgba(255, 182, 217, 0.35); color: #650031; }
+.badge-phase--n4 { background: rgba(255, 153, 198, 0.35); color: #650031; }
+.badge-phase--n3 { background: rgba(255, 177, 198, 0.35); color: #59002a; }
+.badge-phase--n2 { background: rgba(137, 76, 94, 0.2); color: #59002a; }
+.badge-phase--n1 { background: rgba(74, 26, 107, 0.15); color: #4a1a6b; }
+
+.watermark {
+  font-family: "Japan Daisuki", "Be Vietnam Pro", sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #ff82b3;
+  line-height: 1;
+}
+
+.roadmap-card__desc {
+  color: var(--on-surface-variant);
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.roadmap-card__buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: auto;
+}
+
+.action-btn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 6px;
+  border-radius: var(--rounded-md);
+  background: linear-gradient(145deg, #ffffff, #eae4f0);
+  color: #0d0d1a;
+  font-family: "Makuton", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(13, 13, 26, 0.1), -4px -4px 10px #ffffff;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.action-btn-item:hover {
+  background: linear-gradient(145deg, #ffffff, #f7eff9);
+  color: #ff4992;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 14px rgba(13, 13, 26, 0.14), -6px -6px 14px #ffffff;
+  border-color: rgba(255, 73, 146, 0.3);
+}
+
+.action-btn-item:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 3px 3px 6px rgba(13, 13, 26, 0.14), inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.action-btn-item--highlight {
+  background: linear-gradient(145deg, #ffc2db, #ff82b3);
+  color: #650031;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 4px 4px 12px rgba(186, 0, 95, 0.28), -4px -4px 10px rgba(255, 255, 255, 0.85);
+}
+
+.action-btn-item--highlight:hover {
+  background: linear-gradient(145deg, #ffcce3, #ff94bf);
+  color: #59002a;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 16px rgba(186, 0, 95, 0.38), -6px -6px 12px rgba(255, 255, 255, 0.95);
+}
+
+.action-btn-item--highlight:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 3px 3px 6px rgba(101, 0, 49, 0.35), inset -3px -3px 6px rgba(255, 255, 255, 0.6);
+}

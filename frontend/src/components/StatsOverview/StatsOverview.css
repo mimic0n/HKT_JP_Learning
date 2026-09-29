@@ -1,0 +1,110 @@
+.stats-section {
+  width: 100%;
+}
+
+.stats-panel {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  color: #0d0d1a;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-header__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gutter);
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-panel {
+    padding: 24px;
+  }
+}
+
+.stat-item {
+  border-radius: var(--rounded-md);
+  padding: 24px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.stat-item--pink {
+  background: rgba(255, 240, 245, 0.88);
+  border: 1px solid rgba(255, 177, 198, 0.45);
+}
+
+.stat-item--blue {
+  background: rgba(235, 248, 255, 0.88);
+  border: 1px solid rgba(0, 111, 133, 0.25);
+}
+
+.stat-item--green {
+  background: rgba(235, 250, 240, 0.88);
+  border: 1px solid rgba(12, 122, 82, 0.25);
+}
+
+.stat-item--purple {
+  background: rgba(245, 240, 255, 0.88);
+  border: 1px solid rgba(84, 42, 179, 0.25);
+}
+
+.stat-item__value {
+  font-family: "Japan Daisuki", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.text-pink {
+  color: #ba005f;
+  text-shadow: 0 0 8px rgba(186, 0, 95, 0.15);
+}
+
+.text-blue {
+  color: #006f85;
+  text-shadow: 0 0 8px rgba(0, 111, 133, 0.15);
+}
+
+.text-green {
+  color: #0c7a52;
+  text-shadow: 0 0 8px rgba(12, 122, 82, 0.15);
+}
+
+.text-purple {
+  color: #542ab3;
+  text-shadow: 0 0 8px rgba(84, 42, 179, 0.15);
+}
+
+.stat-item__label {
+  font-family: "Makuton", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #544349;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
